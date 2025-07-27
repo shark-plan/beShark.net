@@ -313,7 +313,7 @@ export default function Edit() {
               setOpenSection((prev) => (prev === "fonts" ? null : "fonts"))
             }
           >
-            <h2>خطوط*</h2> <span>{arrowDown}</span>
+            <h2>خطوط</h2> <span>{arrowDown}</span>
           </div>
           <div className={`choses ${openSection === "fonts" ? "active" : ""}`}>
             {[1, 2, 3, 4, 5].map((num) => {
