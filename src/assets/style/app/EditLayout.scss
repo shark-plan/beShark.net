@@ -122,7 +122,7 @@
       fill: var(--light-svg-clr);
     }
     &.active {
-      --x: clamp(300px, 60vw, 700px);
+      --x: clamp(301px, 60vw, 700px);
       transform: translate(calc(var(--x) + 1rem), var(--y));
     }
   }
