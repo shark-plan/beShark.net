@@ -451,23 +451,23 @@ function App() {
           slide1: {
             ...prev.slide1,
             file: null,
-            visible: heroData.slide1_visible ?? true,
-            preview: heroData.slide1_imageUrl || null,
+            visible: heroData?.slide1_visible ?? true,
+            preview: heroData?.slide1_imageUrl || null,
           },
           slide2: {
             ...prev.slide2,
             file: null,
-            visible: heroData.slide2_visible ?? true,
-            preview: heroData.slide2_imageUrl || null,
+            visible: heroData?.slide2_visible ?? true,
+            preview: heroData?.slide2_imageUrl || null,
           },
           slide3: {
             ...prev.slide3,
             file: null,
-            visible: heroData.slide3_visible ?? true,
-            preview: heroData.slide3_imageUrl || null,
+            visible: heroData?.slide3_visible ?? true,
+            preview: heroData?.slide3_imageUrl || null,
           },
         }));
-        setShowImages(heroData.slide3_visible);
+        setShowImages(heroData?.slide3_visible);
         const response3 = await axios.get("/paperwork");
         setpaperwork(response3.data.data);
         if (localStorage.getItem("paperwork")) {
@@ -816,14 +816,14 @@ function App() {
                   suppressContentEditableWarning={true}
                   data-keyhero="slide1_title"
                 >
-                  {Hero.slide1_title || ""}
+                  {Hero?.slide1_title || ""}
                 </h2>
                 <p
                   contentEditable={isEditing_hero}
                   suppressContentEditableWarning={true}
                   data-keyhero="slide1_desc"
                 >
-                  {Hero.slide1_desc || ""}
+                  {Hero?.slide1_desc || ""}
                 </p>
               </div>
               {images.slide1.visible && (
@@ -850,14 +850,14 @@ function App() {
                   suppressContentEditableWarning={true}
                   data-keyhero="slide2_title"
                 >
-                  {Hero.slide2_title || ""}
+                  {Hero?.slide2_title || ""}
                 </h2>
                 <p
                   contentEditable={isEditing_hero}
                   suppressContentEditableWarning={true}
                   data-keyhero="slide2_desc"
                 >
-                  {Hero.slide2_desc || ""}
+                  {Hero?.slide2_desc || ""}
                 </p>
               </div>
               {images.slide1.visible && (
@@ -885,14 +885,14 @@ function App() {
                   suppressContentEditableWarning={true}
                   data-keyhero="slide3_title"
                 >
-                  {Hero.slide3_title || ""}
+                  {Hero?.slide3_title || ""}
                 </h2>
                 <p
                   contentEditable={isEditing_hero}
                   suppressContentEditableWarning={true}
                   data-keyhero="slide3_desc"
                 >
-                  {Hero.slide3_desc || ""}
+                  {Hero?.slide3_desc || ""}
                 </p>
               </div>
               {images.slide3.visible && (
@@ -1265,7 +1265,7 @@ function App() {
 
       <div className="paperwork">
         <img
-          src={previewImage || paperwork.paperworkImage}
+          src={previewImage || paperwork?.paperworkImage}
           alt=""
           style={{ cursor: "pointer" }}
         />
@@ -1280,7 +1280,7 @@ function App() {
               isEditing_paperwork ? { borderBottom: "1px dashed gray" } : {}
             }
           >
-            {editableText || paperwork.paperworkText}
+            {editableText || paperwork?.paperworkText}
           </h2>
         </AnimatedContent>
 

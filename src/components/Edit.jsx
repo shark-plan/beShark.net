@@ -122,15 +122,15 @@ export default function Edit() {
         setSelectedFont(fontFamily);
         document.documentElement.style.setProperty(
           "--arabic-fm-r",
-          fontStyles.regular
+          fontStyles?.regular
         );
         document.documentElement.style.setProperty(
           "--arabic-fm-b",
-          fontStyles.bold
+          fontStyles?.bold
         );
         document.documentElement.style.setProperty(
           "--arabic-fm-exb",
-          fontStyles.extraBold
+          fontStyles?.extraBold
         );
       } catch (err) {
         console.error("Error fetching font:", err.message);
